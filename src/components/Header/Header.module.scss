@@ -1,0 +1,97 @@
+@import "src/theme";
+
+.heading {
+    text-align: center;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-color: $secondary-color !important;
+
+    padding-top: 165px !important;
+    padding-bottom: 0 !important;
+
+    h1 {
+        font-family: $primary-cursive-font-family;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 2em;
+        text-shadow: 2px 2px $shadow-color;
+    }
+
+    // Huge Desktops
+    @media (min-width: $size-huge) {
+        height: 1250px;
+        padding-top: 940px !important;
+
+        h1 {
+            font-size: 7.5em;
+        }
+    }
+
+    // Desktops
+    @media (min-width: $size-extra-large) and (max-width: $size-huge - 1) {
+        height: 960px;
+        padding-top: 750px !important;
+
+        h1 {
+            font-size: 6.5em;
+        }
+    }
+
+    // Laptops / Desktops
+    @media (min-width: $size-large) and (max-width: $size-extra-large - 1) {
+        height: 900px;
+        padding-top: 600px !important;
+
+        h1 {
+            font-size: 5.5em;
+        }
+    }
+
+    // Tablets (Portrait)
+    @media (min-width: $size-medium) and (max-width: $size-large - 1) {
+        height: 800px;
+        padding-top: 550px !important;
+
+        h1 {
+            font-size: 4.5em;
+        }
+    }
+
+    // Tablets (Landscape)
+    @media (min-width: $size-medium) and (max-width: $size-large - 1) and (orientation: landscape) {
+        height: 760px;
+        padding-top: 500px !important;
+
+        h1 {
+            font-size: 4em;
+        }
+    }
+
+    // Mobile (Landscape)
+    @media (min-width: $size-small) and (max-width: $size-medium - 1) {
+        height: 620px;
+        padding-top: 400px !important;
+
+        h1 {
+            font-size: 3.5em;
+        }
+    }
+
+    // Mobile
+    @media (min-width: $size-extra-small) and (max-width: $size-small - 1) {
+        height: 550px;
+        padding-top: 345px !important;
+
+        h1 {
+            font-size: 3em;
+        }
+    }
+}
+
+.sub-heading {
+    text-align: center;
+    padding: 10px 40px 45px;
+    font-family: $primary-font-family;
+}

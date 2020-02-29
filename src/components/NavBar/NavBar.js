@@ -15,7 +15,7 @@ const NavBar = () => {
         <span>
           <button onClick={() => logout()}>Log out</button>
           <Link to="/">Home</Link>&nbsp;
-          <Link to="/profile">Profile</Link>
+          <Link to="/rsvp">Rsvp</Link>
         </span>
       )}
     </div>

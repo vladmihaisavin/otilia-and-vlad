@@ -7,7 +7,7 @@ import Header from "../../components/Header"
 
 import styles from "./Home.module.scss"
 import { Details as DetailsText, Header as HeaderText } from "../../content/Home"
-import headerImg from "../../photos/header_big.jpg"
+import headerImg from "../../photos/home.jpg"
 
 import { selectLanguage } from "../../utils/cookies"
 

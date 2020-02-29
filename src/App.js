@@ -1,6 +1,7 @@
 
 import React from "react"
-import NavBar from "./components/NavBar/NavBar"
+import NavBar from "./components/NavBar"
+import Footer from "./components/Footer"
 
 import { Router, Route, Switch } from "react-router-dom"
 import Rsvp from "./components/Rsvp"
@@ -20,6 +21,9 @@ function App() {
           <PrivateRoute path="/rsvp" component={Rsvp} />
           <Route component={NotFound} />
         </Switch>
+        <footer>
+          <Footer />
+        </footer>
       </Router>
     </div>
   )

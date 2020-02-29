@@ -2,11 +2,10 @@ import React from "react"
 import { useCookies } from "react-cookie"
 import Container from "react-bootstrap/Container"
 
-import { selectLanguage } from "utilities/cookies"
-import { thingsToDo, title } from "content/ThingsToDo"
-import { Header } from "components/Header"
-import { Item } from "components/Item"
-import headerImg from "photos/sky_diving.jpeg"
+import Header from "../components/Header"
+import Item from "../components/Item"
+import headerImg from "../photos/travel.jpg"
+import { selectLanguage } from "../utils/cookies"
 
 function ThingsToDo() {
     const [cookies] = useCookies(["language"])

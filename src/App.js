@@ -6,7 +6,7 @@ import Footer from "./components/Footer"
 import { Router, Route, Switch } from "react-router-dom"
 import PrivateRoute from "./components/PrivateRoute"
 import Schedule from "./views/Schedule"
-// import Travel from "./views/Travel"
+import Travel from "./views/Travel"
 // import ThingsToDo from "./views/ThingsToDo"
 // import FAQ from "./views/FAQ"
 import Home from "./views/Home"
@@ -24,7 +24,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route exact path={"/schedule"} component={Schedule} />
-          {/* <Route exact path={"/travel"} component={Travel} /> */}
+          <Route exact path={"/travel"} component={Travel} />
           {/* <Route exact path={"/things-to-do"} component={ThingsToDo} /> */}
           {/* <Route exact path={"/faq"} component={FAQ} /> */}
           <PrivateRoute path="/rsvp" component={Rsvp} />

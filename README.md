@@ -1,4 +1,5 @@
 # Otilia and Vlad
+[![Netlify Status](https://api.netlify.com/api/v1/badges/445978f9-c436-4b13-81bd-c420f6c34aff/deploy-status)](https://app.netlify.com/sites/admiring-beaver-7aa7d3/deploys)
 ### This project helps us plan and prepare our wedding. It also serves as an invitation and guide for the quests.
 
 ## Structure

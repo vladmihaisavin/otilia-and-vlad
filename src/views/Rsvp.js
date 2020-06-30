@@ -1,21 +1,45 @@
-import React, { Fragment } from "react"
+import React, { useState, useEffect } from "react"
 import { useAuth0 } from "../react-auth0-spa"
+import { getAuthHttpClient } from "../utils/httpClient"
 
 const Rsvp = () => {
-  const { loading, user } = useAuth0()
+  const { loading, user, getTokenSilently } = useAuth0()
+  const [rsvp, setRsvp] = useState({
+    attending: false,
+    vegetarian: false,
+    plus1: false
+  })
+
+  useEffect(() => {
+    setRsvp(prevRsvp => ({
+      ...prevRsvp,
+      name: user ? user.name : ''
+    }))
+  }, [user])
+
+  const testApi = async () => {
+      try {
+        const response = await getAuthHttpClient(await getTokenSilently()).get('/rsvp')
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
+  }
 
   if (loading || !user) {
     return <div>Loading...</div>
   }
 
   return (
-    <Fragment>
-      <img src={user.picture} alt="Rsvp" />
-
-      <h2>{user.name}</h2>
+    <>
+      <h2>
+        <img src={user.picture} alt="Rsvp" />
+        {user.name}
+      </h2>
       <p>{user.email}</p>
       <code>{JSON.stringify(user, null, 2)}</code>
-    </Fragment>
+      <button onClick={testApi}>Test</button>
+    </>
   )
 }
 

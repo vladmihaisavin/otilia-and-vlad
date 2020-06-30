@@ -10,3 +10,8 @@
 - The authentication is handled by integrating the Auth0 APIs;
 - The project is deployed on Netlify, as a static site, on a global CDN;
 - The serverless backend is a collection of Lambda functions, hosted on AWS and managed by Netlify.
+
+## Local run
+`yarn start` will run both client and lambdas locally, using create-react-app and netlify-lambda under the hood.<br>
+The client app will run at http://localhost:3000/.<br>
+The lambdas will be served at http://localhost:9000/.netlify/functions/

@@ -16,21 +16,27 @@ import history from "./utils/history"
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{
+      display: 'flex',
+      flexDirection: 'column',
+      height: '100%'
+    }}>
       <Router history={history}>
-        <header>
+        <header style={{ flex: '0 0 auto' }}>
           <NavBar />
         </header>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route exact path={"/schedule"} component={Schedule} />
-          <Route exact path={"/travel"} component={Travel} />
-          {/* <Route exact path={"/things-to-do"} component={ThingsToDo} /> */}
-          {/* <Route exact path={"/faq"} component={FAQ} /> */}
-          <PrivateRoute path="/rsvp" component={Rsvp} />
-          <Route component={NotFound} />
-        </Switch>
-        <footer>
+        <div style={{ flex: '1 0 auto' }}>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route exact path={"/schedule"} component={Schedule} />
+            <Route exact path={"/travel"} component={Travel} />
+            {/* <Route exact path={"/things-to-do"} component={ThingsToDo} /> */}
+            {/* <Route exact path={"/faq"} component={FAQ} /> */}
+            <PrivateRoute path="/rsvp" component={Rsvp} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+        <footer style={{ flex: '0 0 auto' }}>
           <Footer />
         </footer>
       </Router>

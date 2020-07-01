@@ -17,9 +17,39 @@ const Rsvp = () => {
     }))
   }, [user])
 
+  useEffect(() => {
+    const getUserMetadata = async () => {
+      const domain = "dev-cytlmsok.auth0.com";
+  
+      try {
+        const accessToken = await getTokenSilently({
+          audience: `www.the-savins.com`
+        });
+  
+        console.log('accessToken', accessToken)
+        const userDetailsByIdUrl = `https://${domain}/api/v2/users/${user.sub}`;
+  
+        const metadataResponse = await fetch(userDetailsByIdUrl, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+  
+        const { user_metadata } = await metadataResponse.json();
+  
+        console.log(user_metadata);
+      } catch (e) {
+        console.log('accessTokens')
+        console.log(e);
+      }
+    };
+  
+    getUserMetadata();
+  }, [rsvp]);
+
   const testApi = async () => {
       try {
-        console.log(rsvp)
+        console.log('token', rsvp, await getTokenSilently())
         const response = await getAuthHttpClient(await getTokenSilently()).get('/rsvp')
         console.log(response)
       } catch (err) {

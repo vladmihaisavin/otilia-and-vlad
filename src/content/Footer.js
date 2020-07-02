@@ -1,6 +1,5 @@
 import React from "react"
 import Emoji from "react-emoji-render"
-import Octicon, { MarkGithub } from "@primer/octicons-react"
 
 import { LANGUAGE } from "../utils/constants"
 

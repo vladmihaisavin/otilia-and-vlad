@@ -6,9 +6,9 @@ export default {
     [LANGUAGE.EN]: [
         {
             Title: () => <>Civil Ceremony</>,
-            Date: () => <>Friday, September 4, 2020</>,
+            Date: () => <>Friday, August 21, 2020</>,
             Time: () => <>2:15 PM to 2:30 PM</>,
-            Location: () => <>Country Registry Office</>,
+            Location: () => <>County Registry Office</>,
             locationLink:
                 "https://goo.gl/maps/bBE9LtEqQS8JGcLaA",
             Address: () => (
@@ -28,8 +28,8 @@ export default {
         },
         {
             Title: () => <>Drinks</>,
-            Date: () => <>Friday, September 4, 2020</>,
-            Time: () => <>3:00 PM to 8:00 PM</>,
+            Date: () => <>Friday, August 21, 2020</>,
+            Time: () => <>3:00 PM to 6:00 PM</>,
             Location: () => <>La Castel</>,
             locationLink: "https://lacastel.ro/",
             Address: () => (
@@ -49,8 +49,8 @@ export default {
         },
         {
             Title: () => <>Holy Ceremony</>,
-            Date: () => <>Saturday, September 5, 2020</>,
-            Time: () => <>4:00 PM to 5:00 PM</>,
+            Date: () => <>Saturday, August 22, 2020</>,
+            Time: () => <>12:00 PM to 13:00 PM</>,
             Location: () => <>Assumption of Mary Church</>,
             locationLink: "http://amdis.ro/",
             Address: () => (
@@ -70,21 +70,21 @@ export default {
         },
         {
             Title: () => <>Party</>,
-            Date: () => <>Saturday, September 5, 2020</>,
-            Time: () => <>8:00 PM to 6:00 AM (+1)</>,
-            Location: () => <>Congres Hall, Rossini, Palas, Iasi</>,
-            locationLink: "https://congresshall.ro/rossini/index.php",
+            Date: () => <>Saturday, August 22, 2020</>,
+            Time: () => <>15:00 PM to 23:00 PM (+1)</>,
+            Location: () => <>Liria Events, Aroneanu Lake, Iasi</>,
+            locationLink: "https://liria-events.ro",
             Address: () => (
                 <>
-                    <p>Palas, Iași 700028</p>
+                    <p>Lacul Aroneanu, Iași 707020</p>
                 </>
             ),
             mapLink:
-                "https://goo.gl/maps/KJxHGoh7TrYNUcZU8",
+                "https://goo.gl/maps/3TiohUK9n19q6piv5",
             Details: () => (
                 <>
                     <p>
-                        The party will take place in the Rossini room, which is part of the Palas Congress Hall.
+                        The party will take place near the Aroneanu Lake, at the Liria Events Hall.
                         Let's have some fun!
                     </p>
                 </>
@@ -92,8 +92,8 @@ export default {
         },
         {
             Title: () => <>After Party</>,
-            Date: () => <>Sunday, September 6, 2020</>,
-            Time: () => <>12:00 PM to 3:00 PM</>,
+            Date: () => <>Sunday, August 23, 2020</>,
+            Time: () => <>11:00 AM to 3:00 PM</>,
             Location: () => <>Ramada</>,
             locationLink: "http://www.ramadaiasi.ro/en/restaurant/",
             Address: () => (
@@ -116,7 +116,7 @@ export default {
     [LANGUAGE.RO]: [
         {
             Title: () => <>Cununia Civilă</>,
-            Date: () => <>Vineri, 4 Septembrie, 2020</>,
+            Date: () => <>Vineri, 21 August, 2020</>,
             Time: () => <>de la 2:15 PM până la 2:30 PM</>,
             Location: () => <>Casa căsătoriilor Iași</>,
             locationLink:
@@ -138,8 +138,8 @@ export default {
         },
         {
             Title: () => <>Festivitate</>,
-            Date: () => <>Vineri, 4 Septembrie, 2020</>,
-            Time: () => <>de la 3:00 PM până la 8:00 PM</>,
+            Date: () => <>Vineri, 21 august, 2020</>,
+            Time: () => <>de la 3:00 PM până la 6:00 PM</>,
             Location: () => <>La Castel</>,
             locationLink: "https://lacastel.ro/",
             Address: () => (
@@ -159,8 +159,8 @@ export default {
         },
         {
             Title: () => <>Cununia religioasă</>,
-            Date: () => <>Sâmbătă, 5 Septembrie, 2020</>,
-            Time: () => <>de la 4:00 PM până la 5:00 PM</>,
+            Date: () => <>Sâmbătă, 22 August, 2020</>,
+            Time: () => <>de la 12:00 PM până la 13:00 PM</>,
             Location: () => <>Catedrala Romano-Catolică Adormirea Maicii Domnului</>,
             locationLink: "http://amdis.ro/",
             Address: () => (
@@ -180,21 +180,21 @@ export default {
         },
         {
             Title: () => <>Petrecere</>,
-            Date: () => <>Sâmbătă, 5 Septembrie, 2020</>,
-            Time: () => <>de la 8:00 PM până la 6:00 AM (+1)</>,
-            Location: () => <>Congres Hall, Rossini, Palas, Iasi</>,
-            locationLink: "https://congresshall.ro/rossini/index.php",
+            Date: () => <>Sâmbătă, 22 August, 2020</>,
+            Time: () => <>de la 15:00 PM până la 23:00 PM (+1)</>,
+            Location: () => <>Liria Events, Lacul Aroneanu, Iasi</>,
+            locationLink: "https://liria-events.ro",
             Address: () => (
                 <>
-                    <p>Palas, Iași 700028</p>
+                    <p>Lacul Aroneanu, Iași 707020</p>
                 </>
             ),
             mapLink:
-                "https://goo.gl/maps/KJxHGoh7TrYNUcZU8",
+                "https://goo.gl/maps/3TiohUK9n19q6piv5",
             Details: () => (
                 <>
                     <p>
-                        Petrecerea va avea loc la sala Rossini, parte a Palas Congress Hall.
+                        Petrecerea va avea loc langa Lacul Aroneanu, la sala de evenimente Liria.
                         Hai să ne distrăm!
                     </p>
                 </>
@@ -202,8 +202,8 @@ export default {
         },
         {
             Title: () => <>Ciorba de potroace</>,
-            Date: () => <>Duminică, 6 Septembrie, 2020</>,
-            Time: () => <>12:00 PM to 3:00 PM</>,
+            Date: () => <>Duminică, 23 August, 2020</>,
+            Time: () => <>11:00 AM to 3:00 PM</>,
             Location: () => <>Ramada</>,
             locationLink: "http://www.ramadaiasi.ro/en/restaurant/",
             Address: () => (

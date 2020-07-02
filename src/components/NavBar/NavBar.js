@@ -32,8 +32,9 @@ const NavBar = () => {
 const {
   schedule: ScheduleNavText,
   travel: TravelNavText,
-  thingsToDo: ThingsToDoNavText,
-  faq: FAQNavText,
+  invitation: InvitationNavText,
+  gift: GiftNavText,
+  gallery: GalleryNavText,
   rsvp: RSVPNavText,
   signOut: SignOutText,
   signIn: SignInText
@@ -46,44 +47,28 @@ const {
         sticky="top"
         className={styles.navigation}
     >
-        <RouterNavLink
-            to="/"
-            className={classNames("navbar-brand", styles.brand)}
-        >
+        <RouterNavLink to="/" className={classNames("navbar-brand", styles.brand)}>
             O & V
         </RouterNavLink>
         <Navbar.Toggle />
         <Navbar.Collapse>
             <Nav>
-                <RouterNavLink
-                    to="/schedule"
-                    className="nav-link"
-                    role="button"
-                >
+                <RouterNavLink to="/schedule" className="nav-link" role="button">
                     <ScheduleNavText />
                 </RouterNavLink>
-                <RouterNavLink
-                    to="/travel"
-                    className="nav-link"
-                    role="button"
-                >
+                <RouterNavLink to="/travel" className="nav-link" role="button">
                     <TravelNavText />
                 </RouterNavLink>
-                <RouterNavLink
-                    to="/things-to-do"
-                    className="nav-link"
-                    role="button"
-                >
-                    <ThingsToDoNavText />
+                <RouterNavLink to="/invitation" className="nav-link" role="button">
+                    <InvitationNavText />
                 </RouterNavLink>
-                <RouterNavLink to="/faq" className="nav-link" role="button">
-                    <FAQNavText />
+                <RouterNavLink to="/gift" className="nav-link" role="button">
+                    <GiftNavText />
                 </RouterNavLink>
-                <RouterNavLink
-                    to="/rsvp"
-                    className="nav-link"
-                    role="button"
-                >
+                <RouterNavLink to="/gallery" className="nav-link" role="button">
+                    <GalleryNavText />
+                </RouterNavLink>
+                <RouterNavLink to="/rsvp" className="nav-link" role="button">
                     <RSVPNavText />
                 </RouterNavLink>
             </Nav>

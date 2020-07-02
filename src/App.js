@@ -9,8 +9,9 @@ import { Router, Route, Switch } from "react-router-dom"
 import PrivateRoute from "./components/PrivateRoute"
 import Schedule from "./views/Schedule"
 import Travel from "./views/Travel"
-// import ThingsToDo from "./views/ThingsToDo"
-// import FAQ from "./views/FAQ"
+import Invitation from "./views/Invitation"
+import Gift from "./views/Gift"
+import Gallery from "./views/Gallery"
 import Home from "./views/Home"
 import Rsvp from "./views/Rsvp"
 import { NotFound } from "./views/Error"
@@ -45,8 +46,9 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route exact path={"/schedule"} component={Schedule} />
             <Route exact path={"/travel"} component={Travel} />
-            {/* <Route exact path={"/things-to-do"} component={ThingsToDo} /> */}
-            {/* <Route exact path={"/faq"} component={FAQ} /> */}
+            <Route exact path={"/invitation"} component={Invitation} />
+            <Route exact path={"/gift"} component={Gift} />
+            <Route exact path={"/gallery"} component={Gallery} />
             <PrivateRoute path="/rsvp" component={Rsvp} />
             <Route component={NotFound} />
           </Switch>

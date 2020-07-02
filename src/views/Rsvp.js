@@ -69,8 +69,13 @@ const Rsvp = () => {
   const notAttendingCallback = async () => {
     try {
       setLoadingStoredRsvp(true)
-      setRsvp({ ...rsvp, attending: false})
-      setStoredRsvp(null)
+      setRsvp({ ...rsvp, attending: false })
+      setStoredRsvp({ ...rsvp,
+        attending: false,
+        vegetarian: false,
+        plus1: false,
+        tel: ''
+      })
       await getAuthHttpClient(await getTokenSilently()).put(`/rsvp?email=${rsvp.email}`, rsvp)
       setLoadingStoredRsvp(false)
     } catch (err) {

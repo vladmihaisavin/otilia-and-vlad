@@ -4,7 +4,7 @@ import { useCookies } from "react-cookie"
 
 import { Title, Travel as TravelText } from "../content/Travel"
 import Header from "../components/Header"
-import Item from "../components/Item"
+import MapItem from "../components/MapItem"
 import headerImg from "../photos/travel.jpg"
 import { selectLanguage } from "../utils/cookies"
 
@@ -23,15 +23,23 @@ function Travel() {
             />
             <Container fluid>
                 {travelItems.map(
-                    ({ Type, Title, Details, Address, Phone, link }, idx) => (
-                        <Item
+                    (
+                        {
+                            Title,
+                            Date,
+                            Time,
+                            Location,
+                            Map
+                        },
+                        idx
+                    ) => (
+                        <MapItem
                             key={idx}
-                            LeftMainTitle={Type}
-                            LeftFirstSubTitle={Title}
-                            RightFirstContact={Address}
-                            RightSecondContact={Phone}
-                            RightDetails={Details}
-                            infoLink={link}
+                            LeftMainTitle={Title}
+                            LeftFirstSubTitle={Date}
+                            LeftSecondSubTitle={Time}
+                            RightMainTitle={Location}
+                            Map={Map}
                         />
                     )
                 )}

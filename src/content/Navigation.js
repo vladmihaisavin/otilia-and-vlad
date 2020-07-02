@@ -6,8 +6,9 @@ export default {
     [LANGUAGE.EN]: {
         schedule: () => <span>Schedule</span>,
         travel: () => <span>Travel</span>,
-        thingsToDo: () => <span>Things to Do</span>,
-        faq: () => <span>FAQs</span>,
+        invitation: () => <span>Invitation</span>,
+        gift: () => <span>Gift</span>,
+        gallery: () => <span>Gallery</span>,
         rsvp: () => <span>RSVP</span>,
         signOut: () => <span>Sign Out</span>,
         signIn: () => <span>Sign In</span>,
@@ -16,8 +17,9 @@ export default {
     [LANGUAGE.RO]: {
         schedule: () => <span>Program</span>,
         travel: () => <span>Drum</span>,
-        thingsToDo: () => <span>De făcut</span>,
-        faq: () => <span>Întrebări</span>,
+        invitation: () => <span>Invitatie</span>,
+        gift: () => <span>Cadou</span>,
+        gallery: () => <span>Galerie</span>,
         rsvp: () => <span>Confirmare</span>,
         signOut: () => <span>Ieși din cont</span>,
         signIn: () => <span>Intră în cont</span>,

@@ -8,7 +8,7 @@ export default {
         SubHeading: () => (
             <>
                 We're getting married in <strong>Iassy</strong>. The events take place in various locations.
-                Here is some information about how to get here and where to stay.
+                Here is some information about how to get to the places where the events are hosted.
             </>
         ),
     },
@@ -17,7 +17,7 @@ export default {
         SubHeading: () => (
             <>
                 Ne căsătorim în <strong>Iași</strong>. Evenimentele au loc în mai multe locații.
-                Aici sunt informații despre cum puteți ajunge și unde vă puteți caza.
+                Aici sunt informații despre cum puteți ajunge la evenimente.
             </>
         ),
     },

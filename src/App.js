@@ -1,5 +1,7 @@
 
 import React from "react"
+
+import Spinner from 'react-bootstrap/Spinner'
 import NavBar from "./components/NavBar"
 import Footer from "./components/Footer"
 
@@ -13,8 +15,21 @@ import Home from "./views/Home"
 import Rsvp from "./views/Rsvp"
 import { NotFound } from "./views/Error"
 import history from "./utils/history"
+import { useAuth0 } from "./react-auth0-spa"
 
 function App() {
+  const { loading } = useAuth0()
+  if (loading) {
+    return <div style={{ 
+      display: 'flex',
+      flexflow: 'row nowrap',
+      placeContent: 'center',
+      alignItems: 'center',
+      height: '100%',
+      }}>
+        <Spinner animation="grow" variant="primary" />
+      </div>
+  }
   return (
     <div className="App" style={{
       display: 'flex',

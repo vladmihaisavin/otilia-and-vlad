@@ -70,9 +70,9 @@ const Rsvp = () => {
     try {
       setLoadingStoredRsvp(true)
       setRsvp({ ...rsvp, attending: false})
+      setStoredRsvp(null)
       await getAuthHttpClient(await getTokenSilently()).put(`/rsvp?email=${rsvp.email}`, rsvp)
       setLoadingStoredRsvp(false)
-      setStoredRsvp(rsvp)
     } catch (err) {
       console.log(err)
     }
@@ -135,8 +135,8 @@ const Rsvp = () => {
                         { FormText[language].Plus1 }
                       </div>
                       <div key={`radio-plus1`} className="mb-3">
-                        <Form.Check inline label="Nu" type={'radio'} id={`radio-plus1-1`} checked={rsvp.plus1 === false} onChange={() => setRsvp({ ...rsvp, vegetarian: false })}/>
-                        <Form.Check inline label="Da" type={'radio'} id={`radio-plus1-2`} checked={rsvp.plus1 === true} onChange={() => setRsvp({ ...rsvp, vegetarian: true })}/>
+                        <Form.Check inline label="Nu" type={'radio'} id={`radio-plus1-1`} checked={rsvp.plus1 === false} onChange={() => setRsvp({ ...rsvp, plus1: false })}/>
+                        <Form.Check inline label="Da" type={'radio'} id={`radio-plus1-2`} checked={rsvp.plus1 === true} onChange={() => setRsvp({ ...rsvp, plus1: true })}/>
                       </div>
                       <div className={styles['question']}>
                         { FormText[language].Tel }

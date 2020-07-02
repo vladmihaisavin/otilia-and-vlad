@@ -19,7 +19,10 @@ const Rsvp = () => {
 
   const testApi = async () => {
       try {
-        const response = await getAuthHttpClient(await getTokenSilently()).get('/rsvp')
+        console.log(rsvp)
+        const response = await getAuthHttpClient(await getTokenSilently({
+          audience: `www.the-savins.com`
+        })).get('/rsvp')
         console.log(response)
       } catch (err) {
         console.log(err)

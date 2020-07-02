@@ -2,7 +2,7 @@ const checkAuth = require('../utils/checkAuth')
 
 export default function authMiddleware(config) {
   // might set default options in config
-  return ({
+  return {
     before: (handler, next) => {
       console.log('Before middleware')
       checkAuth(handler.event).then((user) => {
@@ -19,5 +19,5 @@ export default function authMiddleware(config) {
         })
       })
     }
-  })
+  }
 }

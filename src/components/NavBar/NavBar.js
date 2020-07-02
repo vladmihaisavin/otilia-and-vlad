@@ -90,13 +90,13 @@ const {
             <Nav className="ml-auto">
                 <div>
                     {!isAuthenticated && (
-                        <Link className="nav-link" onClick={() => loginWithRedirect({})}>
+                        <Link to='#' className="nav-link" onClick={() => loginWithRedirect({})}>
                             <SignInText />
                         </Link>
                     )}
 
                     {isAuthenticated && (
-                        <Link className="nav-link" onClick={() => logout()}>
+                        <Link to='#' className="nav-link" onClick={() => logout()}>
                             <SignOutText />
                         </Link>
                     )}

@@ -15,3 +15,7 @@
 `yarn start` will run both client and lambdas locally, using create-react-app and netlify-lambda under the hood.<br>
 The client app will run at http://localhost:3000/.<br>
 The lambdas will be served at http://localhost:9000/.netlify/functions/
+
+Using netlify-cli:
+
+`$ source env.sh && netlify dev`

@@ -21,7 +21,6 @@ const Rsvp = () => {
     vegetarian: false,
     plus1: false
   })
-  const [coming, setComing] = useState(false)
 
   useEffect(() => {
     if (user) {
@@ -33,7 +32,7 @@ const Rsvp = () => {
     }
   }, [user])
 
-  const testApi = async () => {
+  const submitForm = async () => {
       try {
         console.log(rsvp)
         const response = await getAuthHttpClient(await getTokenSilently()).get('/rsvp', { params: { email: rsvp.email }})
@@ -76,34 +75,31 @@ const Rsvp = () => {
         { Title[language].SubHeading() }
       </div>
       <Container className={styles['form-container']}>
-        <Row>
+        <Row style={{ placeContent: 'center' }}>
           <div className={styles['question']}>
-          { FormText[language].AttendQ }
+            { FormText[language].AttendQ }
           </div>
         </Row>
-        <Row>
-          <div style={{ textAlign: 'center' }}>
-            <Button variant="success" style={{ width: '100px' }} onClick={() => setComing(true)}>{ FormText[language].Yes }</Button>{' '}
-            <Button variant="secondary" style={{ width: '100px' }} onClick={() => setComing(false)}>{ FormText[language].No }</Button>
-          </div>
+        <Row style={{ placeContent: 'center' }}>
+            <Button variant="success" style={{ width: '100px', marginRight: '20px' }} onClick={() => setRsvp({ ...rsvp, attending: true})}>{ FormText[language].Yes }</Button>
+            <Button variant="secondary" style={{ width: '100px' }} onClick={() => setRsvp({ ...rsvp, attending: false})}>{ FormText[language].No }</Button>
         </Row>
-          <div>
-            
-            {
-              coming
-                ? <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                    <span>{ FormText[language].AttendQ }</span>
-                    <Form.Group>
-                      <Form.Control as="select">
-                        <option>Default select</option>
-                      </Form.Control>
-                    </Form.Group>
-                </div> : ''
-            }
+        {
+          rsvp.attending
+            ? 
             <div style={{ textAlign: 'center', marginTop: '20px' }}>
-              <Button variant="primary" style={{ width: '200px' }} onClick={testApi}>{ FormText[language].Submit }</Button>
-            </div>
-          </div>
+                <div className={styles['question']}>
+                  { FormText[language].Menu }
+                </div>
+                <div key={`inline-${'radio'}`} className="mb-3">
+                  <Form.Check inline label="Standard" type={'radio'} id={`inline-${'radio'}-1`} checked={rsvp.vegetarian === false} onChange={() => setRsvp({ ...rsvp, vegetarian: false })}/>
+                  <Form.Check inline label="Vegetarian" type={'radio'} id={`inline-${'radio'}-2`} checked={rsvp.vegetarian === true} onChange={() => setRsvp({ ...rsvp, vegetarian: true })}/>
+                </div>
+            </div> : ''
+        }
+        <div style={{ textAlign: 'center', margin: '20px 0 20px 0' }}>
+          <Button variant="primary" style={{ width: '200px' }} onClick={submitForm}>{ FormText[language].Submit }</Button>
+        </div>
       </Container>
     </div>
   )

@@ -18,16 +18,6 @@ export default {
                 <p>
                     <Emoji text="Made with 💚 in Iassy by Otilia & Vlad." />
                 </p>
-                <p>
-                    <a
-                        href="https://github.com/vladmihaisavin/otilia-and-vlad"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Source code
-                    </a>{" "}
-                    available on <Octicon icon={MarkGithub} size={11} />
-                </p>
             </>
         )
     },
@@ -43,16 +33,6 @@ export default {
                 </p>
                 <p>
                     <Emoji text="Făcut cu 💚 în Iași de Otilia & Vlad." />
-                </p>
-                <p>
-                    <a
-                        href="https://github.com/vladmihaisavin/otilia-and-vlad"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Cod sursă
-                    </a>{" "}
-                    disponibil pe <Octicon icon={MarkGithub} size={11} />
                 </p>
             </>
         )

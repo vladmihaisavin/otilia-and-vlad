@@ -43,6 +43,16 @@ function fetchRsvp (db, params = {}) {
     })
 }
 
+function putRsvp (db, params = {}, body = { attending: false }) {
+  console.log('=> query database')
+  return db.collection('rsvp').updateOne(params, {$set: JSON.parse(body)}, { upsert: true })
+    .then((results) => { return { statusCode: 200, body: JSON.stringify(results) } })
+    .catch(err => {
+      console.log('=> an error occurred: ', err)
+      return { statusCode: 500, body: 'error' }
+    })
+}
+
 const rsvpController = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false
   console.log('event: ', event)
@@ -53,7 +63,7 @@ const rsvpController = (event, context, callback) => {
         case 'GET':
           return fetchRsvp(db, event.queryStringParameters)
         case 'PUT':
-          break
+          return putRsvp(db, event.queryStringParameters, event.body)
         default:
           return null
       }

@@ -7,7 +7,9 @@ let cachedDb = null
 
 const VALID_REFERERS = [
   'http://localhost:8888/rsvp',
-  'https://www.the-savins.com/rsvp'
+  'https://www.the-savins.com/rsvp',
+  'http://localhost:8888/report?token=oansbfbq24871qdn',
+  'https://www.the-savins.com/report?token=oansbfbq24871qdn'
 ]
 
 function checkAuth (event) {

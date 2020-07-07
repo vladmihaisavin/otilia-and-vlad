@@ -8,7 +8,8 @@ export default {
         SubHeading: () => (
             <span>
                 We would love to celebrate this event with you. <br/>
-                Please let us know if you can join us, by completing the following form:
+                Please let us know if you can join us, by completing the following form,<br/>
+                until 10th of August 2020:
             </span>
         ),
         SubHeading2: (attending) => (
@@ -37,7 +38,8 @@ export default {
         SubHeading: () => (
             <span>
                 Ne-ar face mare plăcere să luați parte la evenimentul nostru.<br/>
-                Vă rugăm să ne confirmați prezența dvs. prin completarea următorului formular.
+                Vă rugăm să ne confirmați prezența dvs. prin completarea următorului formular,<br/>
+                până la data de 10 august 2020:
             </span>
         ),
         SubHeading2: (attending) => (

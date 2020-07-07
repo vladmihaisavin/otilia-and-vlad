@@ -5,7 +5,12 @@ export default {
         Yes: 'Yes',
         No: 'No',
         AttendQ: 'Will you be able to attend our event?',
+        FirstName: 'First Name',
+        LastName: 'Last Name',
+        FullName1: 'Please tell us your full name',
+        FullName2: 'Please tell us your partner\'s full name',
         Menu: 'What type of menu do you prefer?',
+        Menu2: 'What type of menu does your partner prefer?',
         Plus1: 'Do you have a plus 1?',
         Tel: 'Do you wish to provide a phone number?',
         Submit: 'Press here to let us know!',
@@ -20,13 +25,20 @@ export default {
         MentionsPlaceholder: 'Alergens...',
         standard: 'Standard',
         vegetarian: 'Vegetarian',
-        'lacto-vegetarian': 'Lacto Vegetarian'
+        'lacto-vegetarian': 'Lacto Vegetarian',
+        and: 'and',
+        '': ''
     },
     [LANGUAGE.RO]: {
         Yes: 'Da',
         No: 'Nu',
         AttendQ: 'Confirmați prezența la eveniment?',
+        FirstName: 'Prenume',
+        LastName: 'Nume',
+        FullName1: 'Va rugăm să completați numele dvs.',
+        FullName2: 'Va rugăm să completați numele perechii dvs.',
         Menu: 'Ce tip de meniu preferați?',
+        Menu2: 'Ce tip de meniu preferă perechea dvs?',
         Plus1: 'Veniți însoțit de încă o persoană?',
         Tel: 'Doriți să ne lăsați un nr. de telefon?',
         Submit: 'Apăsați aici pentru a ne anunța!',
@@ -41,6 +53,8 @@ export default {
         MentionsPlaceholder: 'Alergeni...',
         standard: 'Standard',
         vegetarian: 'Vegetarian',
-        'lacto-vegetarian': 'Lacto Vegetarian'
+        'lacto-vegetarian': 'Lacto Vegetarian',
+        and: 'și',
+        '': '-'
     },
 }

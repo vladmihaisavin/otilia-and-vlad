@@ -14,6 +14,7 @@ import Gift from "./views/Gift"
 import Gallery from "./views/Gallery"
 import Home from "./views/Home"
 import Rsvp from "./views/Rsvp"
+import Report from "./views/Report"
 import { NotFound } from "./views/Error"
 import history from "./utils/history"
 import { useAuth0 } from "./react-auth0-spa"
@@ -50,6 +51,7 @@ function App() {
             <Route exact path={"/gift"} component={Gift} />
             <Route exact path={"/gallery"} component={Gallery} />
             <PrivateRoute path="/rsvp" component={Rsvp} />
+            <PrivateRoute path="/report" component={Report} />
             <Route component={NotFound} />
           </Switch>
         </div>

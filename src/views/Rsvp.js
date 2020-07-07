@@ -177,7 +177,7 @@ const Rsvp = () => {
                       { FormText[language].Plus1 }
                     </div>
                     <div key={`radio-plus1`} className="mb-3">
-                      <Form.Check inline label="Nu" type={'radio'} id={`radio-plus1-1`} checked={rsvp.plus1 === false} onChange={() => setRsvp({ ...rsvp, plus1: false, meal2: '' })}/>
+                      <Form.Check inline label="Nu" type={'radio'} id={`radio-plus1-1`} checked={rsvp.plus1 === false} onChange={() => setRsvp({ ...rsvp, plus1: false, meal2: '', firstName2: '', lastName2: '' })}/>
                       <Form.Check inline label="Da" type={'radio'} id={`radio-plus1-2`} checked={rsvp.plus1 === true} onChange={() => setRsvp({ ...rsvp, plus1: true, meal2: 'standard' })}/>
                     </div>
                     {

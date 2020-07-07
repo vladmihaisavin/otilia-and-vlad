@@ -50,7 +50,7 @@ const Rsvp = () => {
         console.log(err)
       }
     }
-    if (!loading) {
+    if (!loading && rsvp.email) {
       getStoredRsvp()
     }
   }, [loading, getTokenSilently, rsvp.email])

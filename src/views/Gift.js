@@ -40,7 +40,7 @@ function Gift() {
             <Container className={styles['form-container']} style={{ marginBottom: '40px' }}>
                 <Image src={ giftImage } fluid />
             </Container>
-            <Card style={{ width: '30rem', marginBottom: '40px' }}>
+            <Card style={{ maxWidth: '30rem', marginBottom: '40px' }}>
                 <Card.Body>
                     <Card.Subtitle className="mb-2 text-muted">
                         { Description[language].subHeading() }

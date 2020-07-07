@@ -51,7 +51,7 @@ export default {
             Title: () => <>Holy Ceremony</>,
             Date: () => <>Saturday, August 22, 2020</>,
             Time: () => <>12:00 PM to 13:00 PM</>,
-            Location: () => <>Assumption of Mary Church</>,
+            Location: () => <>Our Lady Queen of Iassy Cathedral</>,
             locationLink: "http://amdis.ro/",
             Address: () => (
                 <>
@@ -59,7 +59,7 @@ export default {
                 </>
             ),
             mapLink:
-                "https://goo.gl/maps/DkC9qoyGfAMLSctC8",
+                "https://goo.gl/maps/rALs8DQgGmaos92y6",
             Details: () => (
                 <>
                     <p>
@@ -131,7 +131,7 @@ export default {
             Details: () => (
                 <>
                     <p>
-                        Cununia civilă va fi scurtă, înainte și după care vor fi scurte sesiuni de fotografii.
+                        Cununia civilă va dura 15 minute. Înainte și după aceasta vor fi scurte sesiuni de fotografii.
                     </p>
                 </>
             )
@@ -161,7 +161,7 @@ export default {
             Title: () => <>Cununia religioasă</>,
             Date: () => <>Sâmbătă, 22 August, 2020</>,
             Time: () => <>de la 12:00 PM până la 13:00 PM</>,
-            Location: () => <>Catedrala Romano-Catolică Adormirea Maicii Domnului</>,
+            Location: () => <>{`Catedrala "Sfânta Fecioară Maria, Regină"`}</>,
             locationLink: "http://amdis.ro/",
             Address: () => (
                 <>
@@ -169,7 +169,7 @@ export default {
                 </>
             ),
             mapLink:
-                "https://goo.gl/maps/DkC9qoyGfAMLSctC8",
+                "https://goo.gl/maps/rALs8DQgGmaos92y6",
             Details: () => (
                 <>
                     <p>
@@ -194,7 +194,7 @@ export default {
             Details: () => (
                 <>
                     <p>
-                        Petrecerea va avea loc langa Lacul Aroneanu, la sala de evenimente Liria.
+                        Petrecerea va avea loc lângă Lacul Aroneanu, la sala de evenimente Liria.
                         Hai să ne distrăm!
                     </p>
                 </>

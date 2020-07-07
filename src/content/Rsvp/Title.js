@@ -35,28 +35,28 @@ export default {
         Heading: () => <>Confirmare</>,
         SubHeading: () => (
             <span>
-                Ne-ar face mare placere sa luati parte la evenimentul nostru.<br/>
-                Va rugam sa ne confirmati prezenta dvs. prin completarea urmatorului formular.
+                Ne-ar face mare plăcere să luați parte la evenimentul nostru.<br/>
+                Vă rugăm să ne confirmați prezența dvs. prin completarea următorului formular.
             </span>
         ),
         SubHeading2: (attending) => (
             <span>
-                Va multumim ca ati completat formularul de confirmare.<br/>
-                {attending ? 'Abia asteptam sa petrecem impreuna!' : 'Ne pare rau ca nu puteti participa la eveniment.'}<br/>
+                Vă mulțumim că ați completat formularul de confirmare.<br/>
+                {attending ? 'Abia așteptăm să petrecem împreună!' : 'Ne pare rău ca nu puteți participa la eveniment.'}<br/>
             </span>
         ),
         Footer: () => (
             <span>
-                In cazul in care au aparut modificari in programul dvs, va rugam sa ne anuntati.
+                În cazul în care au apărut modificări în programul dvs, vă rugăm să ne anunțați.
             </span>
         ),
         OverviewHeader: () => (
             <span>
-                Acestea sunt informatiile pe care ni le-ati transmis.
+                Acestea sunt informațiile pe care ni le-ați transmis.
             </span>
         ),
-        morning: 'Buna dimineata, ',
-        day: 'Buna ziua, ',
-        evening: 'Buna seara, '
+        morning: 'Bună dimineața, ',
+        day: 'Bună ziua, ',
+        evening: 'Bună seara, '
     }
 }

@@ -13,7 +13,7 @@ export default {
         ),
     },
     [LANGUAGE.RO]: {
-        Heading: () => <>Drum</>,
+        Heading: () => <>Cum ajung?</>,
         SubHeading: () => (
             <>
                 Ne căsătorim în <strong>Iași</strong>. Evenimentele au loc în mai multe locații.

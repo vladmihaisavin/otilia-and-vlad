@@ -7,6 +7,6 @@ export default {
         Heading: () => <>Invitation</>
     },
     [LANGUAGE.RO]: {
-        Heading: () => <>Invitatie</>
+        Heading: () => <>Invitație</>
     }
 }

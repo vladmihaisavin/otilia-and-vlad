@@ -16,8 +16,8 @@ export default {
     },
     [LANGUAGE.RO]: {
         schedule: () => <span>Program</span>,
-        travel: () => <span>Drum</span>,
-        invitation: () => <span>Invitatie</span>,
+        travel: () => <span>Cum ajung?</span>,
+        invitation: () => <span>Invitație</span>,
         gift: () => <span>Cadou</span>,
         gallery: () => <span>Galerie</span>,
         rsvp: () => <span>Confirmare</span>,

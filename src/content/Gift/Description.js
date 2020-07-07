@@ -36,6 +36,9 @@ export default {
         </>,
         close: () => <>
             Close
+        </>,
+        showNumbers: () => <>
+            Show numbers
         </>
     },
     [LANGUAGE.RO]: {
@@ -71,6 +74,9 @@ export default {
         </>,
         close: () => <>
             Închide
+        </>,
+        showNumbers: () => <>
+            Vezi numerele de telefon
         </>
     }
 }

@@ -26,27 +26,27 @@ export default {
                 </>
             )
         },
-        {
-            Title: () => <>Drinks</>,
-            Date: () => <>Friday, August 21, 2020</>,
-            Time: () => <>3:00 PM to 6:00 PM</>,
-            Location: () => <>La Castel</>,
-            locationLink: "https://lacastel.ro/",
-            Address: () => (
-                <>
-                    <p>Aleea Mihail Sadoveanu nr. 54, Iași 700489</p>
-                </>
-            ),
-            mapLink:
-                "https://goo.gl/maps/NjWtpf1fPC8evMjr7",
-            Details: () => (
-                <>
-                    <p>
-                        The Civil Ceremony is succeded by a few dishes and refreshments served at a remote restaurant with relaxing gardens.
-                    </p>
-                </>
-            )
-        },
+        // {
+        //     Title: () => <>Drinks</>,
+        //     Date: () => <>Friday, August 21, 2020</>,
+        //     Time: () => <>3:00 PM to 6:00 PM</>,
+        //     Location: () => <>La Castel</>,
+        //     locationLink: "https://lacastel.ro/",
+        //     Address: () => (
+        //         <>
+        //             <p>Aleea Mihail Sadoveanu nr. 54, Iași 700489</p>
+        //         </>
+        //     ),
+        //     mapLink:
+        //         "https://goo.gl/maps/NjWtpf1fPC8evMjr7",
+        //     Details: () => (
+        //         <>
+        //             <p>
+        //                 The Civil Ceremony is succeded by a few dishes and refreshments served at a remote restaurant with relaxing gardens.
+        //             </p>
+        //         </>
+        //     )
+        // },
         {
             Title: () => <>Holy Ceremony</>,
             Date: () => <>Saturday, August 22, 2020</>,
@@ -90,28 +90,28 @@ export default {
                 </>
             )
         },
-        {
-            Title: () => <>After Party</>,
-            Date: () => <>Sunday, August 23, 2020</>,
-            Time: () => <>11:00 AM to 3:00 PM</>,
-            Location: () => <>Ramada</>,
-            locationLink: "http://www.ramadaiasi.ro/en/restaurant/",
-            Address: () => (
-                <>
-                    <p>Strada Grigore Ureche nr. 27, Iași 700044</p>
-                </>
-            ),
-            mapLink:
-                "https://goo.gl/maps/kW8fzSqoXgRwzrxS7",
-            Details: () => (
-                <>
-                    <p>
-                        The after party will take place in the restaurant of the Ramada Hotel.
-                        Let's drink some hot beverages and treat ourselves, after an awesome wedding!
-                    </p>
-                </>
-            )
-        }
+        // {
+        //     Title: () => <>After Party</>,
+        //     Date: () => <>Sunday, August 23, 2020</>,
+        //     Time: () => <>11:00 AM to 3:00 PM</>,
+        //     Location: () => <>Ramada</>,
+        //     locationLink: "http://www.ramadaiasi.ro/en/restaurant/",
+        //     Address: () => (
+        //         <>
+        //             <p>Strada Grigore Ureche nr. 27, Iași 700044</p>
+        //         </>
+        //     ),
+        //     mapLink:
+        //         "https://goo.gl/maps/kW8fzSqoXgRwzrxS7",
+        //     Details: () => (
+        //         <>
+        //             <p>
+        //                 The after party will take place in the restaurant of the Ramada Hotel.
+        //                 Let's drink some hot beverages and treat ourselves, after an awesome wedding!
+        //             </p>
+        //         </>
+        //     )
+        // }
     ],
     [LANGUAGE.RO]: [
         {
@@ -136,27 +136,27 @@ export default {
                 </>
             )
         },
-        {
-            Title: () => <>Festivitate</>,
-            Date: () => <>Vineri, 21 august, 2020</>,
-            Time: () => <>de la 3:00 PM până la 6:00 PM</>,
-            Location: () => <>La Castel</>,
-            locationLink: "https://lacastel.ro/",
-            Address: () => (
-                <>
-                    <p>Aleea Mihail Sadoveanu nr. 54, Iași 700489</p>
-                </>
-            ),
-            mapLink:
-                "https://goo.gl/maps/NjWtpf1fPC8evMjr7",
-            Details: () => (
-                <>
-                    <p>
-                        Cununia civilă este urmată de o serie de antreuri și băuturi, servite la un restaurant cu grădini relaxante, ferite de aglomerația urbană.
-                    </p>
-                </>
-            ),
-        },
+        // {
+        //     Title: () => <>Festivitate</>,
+        //     Date: () => <>Vineri, 21 august, 2020</>,
+        //     Time: () => <>de la 3:00 PM până la 6:00 PM</>,
+        //     Location: () => <>La Castel</>,
+        //     locationLink: "https://lacastel.ro/",
+        //     Address: () => (
+        //         <>
+        //             <p>Aleea Mihail Sadoveanu nr. 54, Iași 700489</p>
+        //         </>
+        //     ),
+        //     mapLink:
+        //         "https://goo.gl/maps/NjWtpf1fPC8evMjr7",
+        //     Details: () => (
+        //         <>
+        //             <p>
+        //                 Cununia civilă este urmată de o serie de antreuri și băuturi, servite la un restaurant cu grădini relaxante, ferite de aglomerația urbană.
+        //             </p>
+        //         </>
+        //     ),
+        // },
         {
             Title: () => <>Cununia religioasă</>,
             Date: () => <>Sâmbătă, 22 August, 2020</>,
@@ -194,32 +194,32 @@ export default {
             Details: () => (
                 <>
                     <p>
-                        Petrecerea va avea loc lângă Lacul Aroneanu, la sala de evenimente Liria.
+                        Petrecerea festivă va avea loc lângă Lacul Aroneanu, la sala de evenimente Liria.
                         Hai să ne distrăm!
                     </p>
                 </>
             )
         },
-        {
-            Title: () => <>Ciorba de potroace</>,
-            Date: () => <>Duminică, 23 August, 2020</>,
-            Time: () => <>11:00 AM to 3:00 PM</>,
-            Location: () => <>Ramada</>,
-            locationLink: "http://www.ramadaiasi.ro/en/restaurant/",
-            Address: () => (
-                <>
-                    <p>Strada Grigore Ureche nr. 27, Iași 700044</p>
-                </>
-            ),
-            mapLink:
-                "https://goo.gl/maps/kW8fzSqoXgRwzrxS7",
-            Details: () => (
-                <>
-                    <p>
-                        Ciorba de potroace va fi servită la restaurantul hotelului Ramada.
-                    </p>
-                </>
-            )
-        }
+        // {
+        //     Title: () => <>Ciorba de potroace</>,
+        //     Date: () => <>Duminică, 23 August, 2020</>,
+        //     Time: () => <>11:00 AM to 3:00 PM</>,
+        //     Location: () => <>Ramada</>,
+        //     locationLink: "http://www.ramadaiasi.ro/en/restaurant/",
+        //     Address: () => (
+        //         <>
+        //             <p>Strada Grigore Ureche nr. 27, Iași 700044</p>
+        //         </>
+        //     ),
+        //     mapLink:
+        //         "https://goo.gl/maps/kW8fzSqoXgRwzrxS7",
+        //     Details: () => (
+        //         <>
+        //             <p>
+        //                 Ciorba de potroace va fi servită la restaurantul hotelului Ramada.
+        //             </p>
+        //         </>
+        //     )
+        // }
     ],
 }

@@ -11,7 +11,7 @@ export default {
         gallery: () => <span>Gallery</span>,
         rsvp: () => <span>RSVP</span>,
         signOut: () => <span>Sign Out</span>,
-        signIn: () => <span>Sign In</span>,
+        signIn: () => <span>Sign Up/In</span>,
         manageRsvp: () => <span>Manage RSVP</span>
     },
     [LANGUAGE.RO]: {
@@ -22,7 +22,7 @@ export default {
         gallery: () => <span>Galerie</span>,
         rsvp: () => <span>Confirmare</span>,
         signOut: () => <span>Ieși din cont</span>,
-        signIn: () => <span>Intră în cont</span>,
+        signIn: () => <span>Creare / Intrare în cont</span>,
         manageRsvp: () => <span>Editează confirmare</span>
     }
 }

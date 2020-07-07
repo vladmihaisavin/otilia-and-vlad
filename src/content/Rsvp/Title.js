@@ -19,7 +19,8 @@ export default {
         ),
         Footer: () => (
             <span>
-                In case some changes occured in your schedule, please let us know.
+                In case some changes occured in your schedule, <br/>
+                please let us know until 10th of August 2020.
             </span>
         ),
         OverviewHeader: () => (
@@ -47,7 +48,8 @@ export default {
         ),
         Footer: () => (
             <span>
-                În cazul în care au apărut modificări în programul dvs, vă rugăm să ne anunțați.
+                În cazul în care au apărut modificări în programul dvs, <br/>
+                vă rugăm să ne anunțați până la data de 10 august 2020.
             </span>
         ),
         OverviewHeader: () => (

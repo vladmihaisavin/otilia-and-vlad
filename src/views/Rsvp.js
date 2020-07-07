@@ -19,9 +19,10 @@ const Rsvp = () => {
   const [loadingStoredRsvp, setLoadingStoredRsvp] = useState(true)
   const [rsvp, setRsvp] = useState({
     attending: false,
-    vegetarian: false,
+    meal: 'standard',
     plus1: false,
     tel: '',
+    mentions: '',
     name: undefined,
     email: undefined
   })
@@ -72,9 +73,10 @@ const Rsvp = () => {
       setRsvp({ ...rsvp, attending: false })
       setStoredRsvp({ ...rsvp,
         attending: false,
-        vegetarian: false,
+        meal: 'standard',
         plus1: false,
-        tel: ''
+        tel: '',
+        mentions: '',
       })
       await getAuthHttpClient(await getTokenSilently()).put(`/rsvp?email=${rsvp.email}`, rsvp)
       setLoadingStoredRsvp(false)
@@ -106,8 +108,7 @@ const Rsvp = () => {
       alignItems: 'center'
       }}>
       <h2 style={{ marginTop: '50px' }}>
-        { Title[language][hour > 18 ? 'evening' : (hour < 12 ? 'morning' : 'day')] } 
-        {/* <img src={user.picture} alt="Rsvp" /> */}
+        { Title[language][hour > 17 ? 'evening' : (hour < 12 ? 'morning' : 'day')] }
         {user.name}!
       </h2>
       { storedRsvp === null
@@ -132,9 +133,10 @@ const Rsvp = () => {
                       <div className={styles['question']}>
                         { FormText[language].Menu }
                       </div>
-                      <div key={`radio-vegetarian`} className="mb-3">
-                        <Form.Check inline label="Standard" type={'radio'} id={`radio-vegetarian-1`} checked={rsvp.vegetarian === false} onChange={() => setRsvp({ ...rsvp, vegetarian: false })}/>
-                        <Form.Check inline label="Vegetarian" type={'radio'} id={`radio-vegetarian-2`} checked={rsvp.vegetarian === true} onChange={() => setRsvp({ ...rsvp, vegetarian: true })}/>
+                      <div key={`radio-meal`} className="mb-3">
+                        <Form.Check inline label="Standard" type={'radio'} id={`radio-meal-1`} checked={rsvp.meal === 'standard'} onChange={() => setRsvp({ ...rsvp, meal: 'standard' })}/>
+                        <Form.Check inline label="Vegetarian" type={'radio'} id={`radio-meal-2`} checked={rsvp.meal === 'vegetarian'} onChange={() => setRsvp({ ...rsvp, meal: 'vegetarian' })}/>
+                        <Form.Check inline label="Lacto Vegetarian" type={'radio'} id={`radio-meal-3`} checked={rsvp.meal === 'lacto-vegetarian'} onChange={() => setRsvp({ ...rsvp, meal: 'lacto-vegetarian' })}/>
                       </div>
                       <div className={styles['question']}>
                         { FormText[language].Plus1 }
@@ -147,6 +149,10 @@ const Rsvp = () => {
                         { FormText[language].Tel }
                       </div>
                       <Form.Control type="text" placeholder="Tel" onChange={(e) => setRsvp({ ...rsvp, tel: e.target.value })}/>
+                      <div className={styles['question']}>
+                        { FormText[language].Mentions }
+                      </div>
+                      <Form.Control type="text" placeholder={ FormText[language].MentionsPlaceholder } onChange={(e) => setRsvp({ ...rsvp, mentions: e.target.value })}/>
                   </div> : ''
               }
               <div style={{ textAlign: 'center', margin: '20px 0 20px 0' }}>
@@ -170,7 +176,7 @@ const Rsvp = () => {
               </Row>
               <Row style={{ paddingLeft: '15px' }}>
                 <div className={styles['info']}>
-                  { FormText[language].Vegetarian }: { FormText[language][storedRsvp.vegetarian.toString()] }
+                  { FormText[language].Meal }: { FormText[language][storedRsvp.meal] }
                 </div>
               </Row>
               <Row style={{ paddingLeft: '15px' }}>

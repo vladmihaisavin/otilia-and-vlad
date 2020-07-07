@@ -5,6 +5,11 @@ const middy = require('middy')
 
 let cachedDb = null
 
+const VALID_REFERERS = [
+  'http://localhost:8888/rsvp',
+  'https://www.the-savins.com/rsvp'
+]
+
 function checkAuth (event) {
   return new Promise((resolve, reject) => {
     if (!event.headers.authorization) {
@@ -12,7 +17,7 @@ function checkAuth (event) {
       return reject(new Error(reason))
     }
     const token = event.headers.authorization.substring(7)
-    if (token.length === 32) {
+    if (token.length === 32 && VALID_REFERERS.includes(event.headers.referer)) {
       return resolve()
     }
     return reject(new Error('Invalid auth token.'))

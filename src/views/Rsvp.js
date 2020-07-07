@@ -44,7 +44,9 @@ const Rsvp = () => {
       try {
         const response = await getAuthHttpClient(await getTokenSilently()).get('/rsvp', { params: { email: rsvp.email }})
         if (response.data.length > 0) {
+          delete response.data[0]._id
           setStoredRsvp(response.data[0])
+          setRsvp(response.data[0])
         }
         setLoadingStoredRsvp(false)
       } catch (err) {
@@ -148,11 +150,11 @@ const Rsvp = () => {
                       <div className={styles['question']}>
                         { FormText[language].Tel }
                       </div>
-                      <Form.Control type="text" placeholder="Tel" onChange={(e) => setRsvp({ ...rsvp, tel: e.target.value })}/>
+                      <Form.Control type="text" value={ rsvp.tel } placeholder="Tel" onChange={(e) => setRsvp({ ...rsvp, tel: e.target.value })}/>
                       <div className={styles['question']}>
                         { FormText[language].MentionsQ }
                       </div>
-                      <Form.Control type="text" placeholder={ FormText[language].MentionsPlaceholder } onChange={(e) => setRsvp({ ...rsvp, mentions: e.target.value })}/>
+                      <Form.Control type="text" value={ rsvp.mentions } placeholder={ FormText[language].MentionsPlaceholder } onChange={(e) => setRsvp({ ...rsvp, mentions: e.target.value })}/>
                   </div> : ''
               }
               <div style={{ textAlign: 'center', margin: '20px 0 20px 0' }}>

@@ -53,23 +53,23 @@ const {
         <Navbar.Toggle />
         <Navbar.Collapse>
             <Nav>
+                <RouterNavLink to="/invitation" className="nav-link" role="button">
+                    <InvitationNavText />
+                </RouterNavLink>
                 <RouterNavLink to="/schedule" className="nav-link" role="button">
                     <ScheduleNavText />
                 </RouterNavLink>
                 <RouterNavLink to="/travel" className="nav-link" role="button">
                     <TravelNavText />
                 </RouterNavLink>
-                <RouterNavLink to="/invitation" className="nav-link" role="button">
-                    <InvitationNavText />
-                </RouterNavLink>
                 <RouterNavLink to="/gift" className="nav-link" role="button">
                     <GiftNavText />
                 </RouterNavLink>
-                <RouterNavLink to="/gallery" className="nav-link" role="button">
-                    <GalleryNavText />
-                </RouterNavLink>
                 <RouterNavLink to="/rsvp" className="nav-link" role="button">
                     <RSVPNavText />
+                </RouterNavLink>
+                <RouterNavLink to="/gallery" className="nav-link" role="button">
+                    <GalleryNavText />
                 </RouterNavLink>
             </Nav>
             <Nav className="ml-auto">

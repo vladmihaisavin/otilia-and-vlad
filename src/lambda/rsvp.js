@@ -51,7 +51,7 @@ function fetchRsvp (db, params = {}) {
 function putRsvp (db, params = {}, body = { attending: false }) {
   console.log('=> query database')
   return db.collection('rsvp').updateOne(params, {$set: JSON.parse(body)}, { upsert: true })
-    .then((results) => { return { statusCode: 200, body: JSON.stringify(results) } })
+    .then(() => { return { statusCode: 204, body: '' } })
     .catch(err => {
       console.log('=> an error occurred: ', err)
       return { statusCode: 500, body: 'error' }

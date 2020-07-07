@@ -131,7 +131,7 @@ export default {
             Details: () => (
                 <>
                     <p>
-                        Cununia civilă va dura 15 minute. Înainte și după aceasta vor fi scurte sesiuni de fotografii.
+                        Cununia civilă va dura 15 minute. Înainte și după aceasta vor fi scurte sesiuni foto.
                     </p>
                 </>
             )
@@ -173,7 +173,7 @@ export default {
             Details: () => (
                 <>
                     <p>
-                        Cununia religioasă va avea loc la Catedrala Romano-Catolică, și va fi urmată de o scurtă sesiune de fotografie.
+                        Cununia religioasă se va celebra la Catedrala Romano-Catolică și va fi urmată de o scurtă sesiune foto.
                     </p>
                 </>
             )
@@ -195,7 +195,7 @@ export default {
                 <>
                     <p>
                         Petrecerea festivă va avea loc lângă Lacul Aroneanu, la sala de evenimente Liria.
-                        Hai să ne distrăm!
+                        Vă așteptăm să ne distrăm împreună!
                     </p>
                 </>
             )

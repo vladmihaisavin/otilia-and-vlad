@@ -17,7 +17,7 @@ export default {
         SubHeading: () => (
             <span>
                 Acesta este programul nunții noastre.
-                Suntem nerăbdători să celebram acest eveniment alături de dumneavoastră!
+                Suntem nerăbdători să celebrăm acest eveniment alături de dumneavoastră!
             </span>
         )
     }

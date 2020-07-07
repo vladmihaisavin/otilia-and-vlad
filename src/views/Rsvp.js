@@ -150,7 +150,7 @@ const Rsvp = () => {
                       </div>
                       <Form.Control type="text" placeholder="Tel" onChange={(e) => setRsvp({ ...rsvp, tel: e.target.value })}/>
                       <div className={styles['question']}>
-                        { FormText[language].Mentions }
+                        { FormText[language].MentionsQ }
                       </div>
                       <Form.Control type="text" placeholder={ FormText[language].MentionsPlaceholder } onChange={(e) => setRsvp({ ...rsvp, mentions: e.target.value })}/>
                   </div> : ''
@@ -197,6 +197,11 @@ const Rsvp = () => {
               <Row style={{ paddingLeft: '15px' }}>
                 <div className={styles['info']}>
                   Tel: { storedRsvp.tel || '-' }
+                </div>
+              </Row>
+              <Row style={{ paddingLeft: '15px' }}>
+                <div className={styles['info']}>
+                  { FormText[language].Mentions }: { storedRsvp.mentions || '-' }
                 </div>
               </Row>
             </Container>

@@ -7,8 +7,8 @@ export default {
         Heading: () => <>RSVP</>,
         SubHeading: () => (
             <span>
-                We would love to celebrate this event with you. Please let us know if you can join us,
-                by completing the following form.
+                We would love to celebrate this event with you. <br/>
+                Please let us know if you can join us, by completing the following form:
             </span>
         ),
         SubHeading2: (attending) => (

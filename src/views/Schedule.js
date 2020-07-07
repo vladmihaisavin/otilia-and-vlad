@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container"
 import { Title, Schedule as ScheduleText } from "../content/Schedule"
 import Header from "../components/Header"
 import Item from "../components/Item"
-import headerImg from "../photos/schedule.jpg"
+import headerImg from "../photos/IMG_0967.JPG"
 import { selectLanguage } from "../utils/cookies"
 
 function Schedule() {

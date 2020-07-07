@@ -5,7 +5,7 @@ import { useCookies } from "react-cookie"
 import { Title, Travel as TravelText } from "../content/Travel"
 import Header from "../components/Header"
 import MapItem from "../components/MapItem"
-import headerImg from "../photos/travel.jpg"
+import headerImg from "../photos/IMG_0247.jpg"
 import { selectLanguage } from "../utils/cookies"
 
 function Travel() {

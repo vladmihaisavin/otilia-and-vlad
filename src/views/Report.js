@@ -16,29 +16,50 @@ const DEFAULT_SUMMARY = {
   plus1: 0
 }
 
+const createUserName = (firstName, lastName) => {
+  if (firstName && lastName) {
+    return `${firstName} ${lastName}`
+  } else if(firstName) {
+    return firstName
+  } else if (lastName) {
+    return lastName
+  } else {
+    return ''
+  }
+}
+
 const calculateSummary = (rsvpList) => {
   const summary = DEFAULT_SUMMARY
   rsvpList.forEach(rsvp => {
     summary.total += 1
     if (rsvp.attending) {
-      if (rsvp.plus1) {
-        summary.attending += 2
-        summary.plus1 += 1
-      } else {
-        summary.attending += 1
-        summary.single += 1
-      }
+      summary.attending += 1
     } else {
       summary.notAttending += 1
     }
-    if (rsvp.meal === 'standard') {
+    if (rsvp.meal1 === 'standard') {
       summary.standard += 1
     }
-    if (rsvp.meal === 'vegetarian') {
+    if (rsvp.meal2 === 'standard') {
+      summary.standard += 1
+    }
+    if (rsvp.meal1 === 'vegetarian') {
       summary.vegetarian += 1
     }
-    if (rsvp.meal === 'lacto-vegetarian') {
+    if (rsvp.meal2 === 'vegetarian') {
+      summary.vegetarian += 1
+    }
+    if (rsvp.meal1 === 'lacto-vegetarian') {
       summary.lactoVegetarian += 1
+    }
+    if (rsvp.meal2 === 'lacto-vegetarian') {
+      summary.lactoVegetarian += 1
+    }
+    if (rsvp.plus1) {
+      summary.attending += 1
+      summary.plus1 += 1
+    } else {
+      summary.single += 1
     }
   })
   return summary
@@ -82,7 +103,7 @@ const Report = () => {
 
   return (
     <Container>
-      <div style={{ marginBottom: '40px' }}>
+      <div style={{ margin: '40px 0' }}>
         <h3>
           SUMMARY
         </h3>
@@ -128,6 +149,8 @@ const Report = () => {
             <th>Attending</th>
             <th>Meal</th>
             <th>Plus1</th>
+            <th>Plus1 Name</th>
+            <th>Plus1 Meal</th>
             <th>Tel</th>
             <th>Mentions</th>
           </tr>
@@ -138,11 +161,13 @@ const Report = () => {
               return (
                 <tr key={idx}>
                   <td>{ idx + 1 }</td>
-                  <td>{ rsvp.name }</td>
+                  <td>{ createUserName(rsvp.lastName1, rsvp.firstName1) }</td>
                   <td>{ rsvp.email }</td>
                   <td>{ rsvp.attending.toString() }</td>
-                  <td>{ rsvp.meal }</td>
+                  <td>{ rsvp.meal1 }</td>
                   <td>{ rsvp.plus1.toString() }</td>
+                  <td>{ createUserName(rsvp.lastName2, rsvp.firstName2) || '-' }</td>
+                  <td>{ rsvp.meal2 || '-' }</td>
                   <td>{ rsvp.tel || '-' }</td>
                   <td>{ rsvp.mentions || '-' }</td>
                 </tr>

@@ -29,7 +29,7 @@ export default {
             but you can't reach the events?
         </>,
         ways: () => <>
-            We have two ways available for you to send us a gift:
+            We have two ways available:
         </>,
         thanks: () => <>
             Thanks!
@@ -60,11 +60,11 @@ export default {
             }
         },
         subHeading: () => <>
-            Doriți să ne transmiteți un cadou, pentru a ne ajuta la început de drum,
+            Doriți să ne transmiteți felicitările dumneavoastră, pentru a ne oferi un suport la început de drum,
             dar nu puteți ajunge la festivități?
         </>,
         ways: () => <>
-            Avem disponibile două modalități prin care ne puteți transmite cadoul:
+            Avem disponibile două modalități:
         </>,
         thanks: () => <>
             Vă mulțumim!

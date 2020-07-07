@@ -18,7 +18,7 @@ export default {
         schedule: () => <span>Program</span>,
         travel: () => <span>Cum ajung?</span>,
         invitation: () => <span>Invitație</span>,
-        gift: () => <span>Cadou</span>,
+        gift: () => <span>Felicitări</span>,
         gallery: () => <span>Galerie</span>,
         rsvp: () => <span>Confirmare</span>,
         signOut: () => <span>Ieși din cont</span>,

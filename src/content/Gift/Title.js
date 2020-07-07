@@ -7,6 +7,6 @@ export default {
         Heading: () => <>Gift</>
     },
     [LANGUAGE.RO]: {
-        Heading: () => <>Cadou</>
+        Heading: () => <>Felicitări</>
     }
 }

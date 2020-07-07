@@ -65,7 +65,7 @@ function Invitation() {
             <div className={styles["sub-heading"]}>
             { Title[language].Heading() }
             </div>
-            <Container className={styles['form-container']} style={{ marginBottom: '40px' }}>
+            <Container className={styles['form-container']} style={{ marginBottom: '40px', maxWidth: '650px' }}>
                 <Image src={ invitationImage } fluid />
             </Container>
             <Container style={{ marginBottom: '40px' }}>

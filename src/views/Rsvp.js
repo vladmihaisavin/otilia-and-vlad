@@ -31,7 +31,7 @@ const Rsvp = () => {
   const language = selectLanguage(cookies)
   const [loadingStoredRsvp, setLoadingStoredRsvp] = useState(true)
   const [rsvp, setRsvp] = useState({
-    attending: false,
+    attending: undefined,
     meal1: 'standard',
     meal2: '',
     plus1: false,
@@ -79,34 +79,36 @@ const Rsvp = () => {
   const submitForm = async () => {
     try {
       setLoadingStoredRsvp(true)
-      await getAuthHttpClient(await getTokenSilently()).put(`/rsvp?email=${rsvp.email}`, rsvp)
+      if (rsvp.attending) {
+        await getAuthHttpClient(await getTokenSilently()).put(`/rsvp?email=${rsvp.email}`, rsvp)
+        setStoredRsvp(rsvp)
+      } else {
+        const newRsvp = { ...rsvp,
+          attending: false,
+          meal1: '',
+          meal2: '',
+          plus1: false,
+          firstName2: '',
+          lastName2: '',
+          tel: '',
+          mentions: ''
+        }
+        setRsvp(newRsvp)
+        setStoredRsvp(newRsvp)
+        await getAuthHttpClient(await getTokenSilently()).put(`/rsvp?email=${rsvp.email}`, newRsvp)
+      }
       setLoadingStoredRsvp(false)
-      setStoredRsvp(rsvp)
     } catch (err) {
       console.log(err)
     }
   }
 
-  const notAttendingCallback = async () => {
-    try {
-      setLoadingStoredRsvp(true)
-      const newRsvp = { ...rsvp,
-        attending: false,
-        meal1: '',
-        meal2: '',
-        plus1: false,
-        firstName2: '',
-        lastName2: '',
-        tel: '',
-        mentions: ''
-      }
-      setRsvp(newRsvp)
-      setStoredRsvp(newRsvp)
-      await getAuthHttpClient(await getTokenSilently()).put(`/rsvp?email=${rsvp.email}`, newRsvp)
-      setLoadingStoredRsvp(false)
-    } catch (err) {
-      console.log(err)
-    }
+  const retakeFormCallback = () => {
+    setRsvp({
+      ...rsvp,
+      attending: undefined
+    })
+    setStoredRsvp(null)
   }
 
   if (loading || loadingStoredRsvp || !user) {
@@ -140,83 +142,88 @@ const Rsvp = () => {
             <div className={styles["sub-heading"]}>
               { Title[language].SubHeading() }
             </div>
-            <Container className={styles['form-container']}>
+            <Container className={styles['form-container']} style={{ paddingBottom: '20px' }}>
               <Row style={{ placeContent: 'center' }}>
                 <div className={styles['question']}>
                   { FormText[language].AttendQ }
                 </div>
               </Row>
               <Row style={{ placeContent: 'center' }}>
-                  <Button variant="success" style={{ width: '100px', marginRight: '20px' }} onClick={() => setRsvp({ ...rsvp, attending: true})}>{ FormText[language].Yes }</Button>
-                  <Button variant="secondary" style={{ width: '100px' }} onClick={notAttendingCallback}>{ FormText[language].No }</Button>
+                  <Button variant={`${rsvp.attending === true ? '' : 'outline-'}success`} style={{ width: '100px', marginRight: '20px' }} onClick={() => setRsvp({ ...rsvp, attending: true})}>{ FormText[language].Yes }</Button>
+                  <Button variant={`${rsvp.attending === false ? '' : 'outline-'}secondary`} style={{ width: '100px' }} onClick={() => setRsvp({ ...rsvp, attending: false})}>{ FormText[language].No }</Button>
               </Row>
               {
                 rsvp.attending
-                  ? 
-                  <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                    <div className={styles['question']}>
-                      { FormText[language].FullName1 }
+                  ? <>
+                    <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                      <div className={styles['question']}>
+                        { FormText[language].FullName1 }
+                      </div>
+                      <Row>
+                        <Col>
+                          <Form.Control type="text" value={ rsvp.lastName1 } placeholder={ FormText[language].LastName } onChange={(e) => setRsvp({ ...rsvp, lastName1: e.target.value })}/>
+                        </Col>
+                        <Col>
+                          <Form.Control type="text" value={ rsvp.firstName1 } placeholder={ FormText[language].FirstName } onChange={(e) => setRsvp({ ...rsvp, firstName1: e.target.value })}/>
+                        </Col>
+                      </Row>
+                      <div className={styles['question']}>
+                        { FormText[language].Menu }
+                      </div>
+                      <div key={`radio-meal`} className="mb-3">
+                        <Form.Check inline label="Standard" type={'radio'} id={`radio-meal-1`} checked={rsvp.meal1 === 'standard'} onChange={() => setRsvp({ ...rsvp, meal1: 'standard' })}/>
+                        <Form.Check inline label="Vegetarian" type={'radio'} id={`radio-meal-2`} checked={rsvp.meal1 === 'vegetarian'} onChange={() => setRsvp({ ...rsvp, meal1: 'vegetarian' })}/>
+                        <Form.Check inline label="Lacto Vegetarian" type={'radio'} id={`radio-meal-3`} checked={rsvp.meal1 === 'lacto-vegetarian'} onChange={() => setRsvp({ ...rsvp, meal1: 'lacto-vegetarian' })}/>
+                      </div>
+                      <div className={styles['question']}>
+                        { FormText[language].Plus1 }
+                      </div>
+                      <div key={`radio-plus1`} className="mb-3">
+                        <Form.Check inline label="Nu" type={'radio'} id={`radio-plus1-1`} checked={rsvp.plus1 === false} onChange={() => setRsvp({ ...rsvp, plus1: false, meal2: '', firstName2: '', lastName2: '' })}/>
+                        <Form.Check inline label="Da" type={'radio'} id={`radio-plus1-2`} checked={rsvp.plus1 === true} onChange={() => setRsvp({ ...rsvp, plus1: true, meal2: 'standard' })}/>
+                      </div>
+                      {
+                        rsvp.plus1
+                          ? <>
+                            <div className={styles['question']}>
+                              { FormText[language].FullName2 }
+                            </div>
+                            <Row>
+                              <Col>
+                                <Form.Control type="text" value={ rsvp.lastName2 } placeholder={ FormText[language].LastName } onChange={(e) => setRsvp({ ...rsvp, lastName2: e.target.value })}/>
+                              </Col>
+                              <Col>
+                                <Form.Control type="text" value={ rsvp.firstName2 } placeholder={ FormText[language].FirstName } onChange={(e) => setRsvp({ ...rsvp, firstName2: e.target.value })}/>
+                              </Col>
+                            </Row>
+                            <div className={styles['question']}>
+                              { FormText[language].Menu2 }
+                            </div>
+                            <div key={`radio-meal-partner`} className="mb-3">
+                              <Form.Check inline label="Standard" type={'radio'} id={`radio-meal-partner-1`} checked={rsvp.meal2 === 'standard'} onChange={() => setRsvp({ ...rsvp, meal2: 'standard' })}/>
+                              <Form.Check inline label="Vegetarian" type={'radio'} id={`radio-meal-partner-2`} checked={rsvp.meal2 === 'vegetarian'} onChange={() => setRsvp({ ...rsvp, meal2: 'vegetarian' })}/>
+                              <Form.Check inline label="Lacto Vegetarian" type={'radio'} id={`radio-meal-partner-3`} checked={rsvp.meal2 === 'lacto-vegetarian'} onChange={() => setRsvp({ ...rsvp, meal2: 'lacto-vegetarian' })}/>
+                            </div>
+                          </> : ''
+                      }
+                      <div className={styles['question']}>
+                        { FormText[language].Tel }
+                      </div>
+                      <Form.Control type="text" value={ rsvp.tel } placeholder="Tel" onChange={(e) => setRsvp({ ...rsvp, tel: e.target.value })}/>
+                      <div className={styles['question']}>
+                        { FormText[language].MentionsQ }
+                      </div>
+                      <Form.Control type="text" value={ rsvp.mentions } placeholder={ FormText[language].MentionsPlaceholder } onChange={(e) => setRsvp({ ...rsvp, mentions: e.target.value })}/>
                     </div>
-                    <Row>
-                      <Col>
-                        <Form.Control type="text" value={ rsvp.lastName1 } placeholder={ FormText[language].LastName } onChange={(e) => setRsvp({ ...rsvp, lastName1: e.target.value })}/>
-                      </Col>
-                      <Col>
-                        <Form.Control type="text" value={ rsvp.firstName1 } placeholder={ FormText[language].FirstName } onChange={(e) => setRsvp({ ...rsvp, firstName1: e.target.value })}/>
-                      </Col>
-                    </Row>
-                    <div className={styles['question']}>
-                      { FormText[language].Menu }
-                    </div>
-                    <div key={`radio-meal`} className="mb-3">
-                      <Form.Check inline label="Standard" type={'radio'} id={`radio-meal-1`} checked={rsvp.meal1 === 'standard'} onChange={() => setRsvp({ ...rsvp, meal1: 'standard' })}/>
-                      <Form.Check inline label="Vegetarian" type={'radio'} id={`radio-meal-2`} checked={rsvp.meal1 === 'vegetarian'} onChange={() => setRsvp({ ...rsvp, meal1: 'vegetarian' })}/>
-                      <Form.Check inline label="Lacto Vegetarian" type={'radio'} id={`radio-meal-3`} checked={rsvp.meal1 === 'lacto-vegetarian'} onChange={() => setRsvp({ ...rsvp, meal1: 'lacto-vegetarian' })}/>
-                    </div>
-                    <div className={styles['question']}>
-                      { FormText[language].Plus1 }
-                    </div>
-                    <div key={`radio-plus1`} className="mb-3">
-                      <Form.Check inline label="Nu" type={'radio'} id={`radio-plus1-1`} checked={rsvp.plus1 === false} onChange={() => setRsvp({ ...rsvp, plus1: false, meal2: '', firstName2: '', lastName2: '' })}/>
-                      <Form.Check inline label="Da" type={'radio'} id={`radio-plus1-2`} checked={rsvp.plus1 === true} onChange={() => setRsvp({ ...rsvp, plus1: true, meal2: 'standard' })}/>
-                    </div>
-                    {
-                      rsvp.plus1
-                        ? <>
-                          <div className={styles['question']}>
-                            { FormText[language].FullName2 }
-                          </div>
-                          <Row>
-                            <Col>
-                              <Form.Control type="text" value={ rsvp.lastName2 } placeholder={ FormText[language].LastName } onChange={(e) => setRsvp({ ...rsvp, lastName2: e.target.value })}/>
-                            </Col>
-                            <Col>
-                              <Form.Control type="text" value={ rsvp.firstName2 } placeholder={ FormText[language].FirstName } onChange={(e) => setRsvp({ ...rsvp, firstName2: e.target.value })}/>
-                            </Col>
-                          </Row>
-                          <div className={styles['question']}>
-                            { FormText[language].Menu2 }
-                          </div>
-                          <div key={`radio-meal-partner`} className="mb-3">
-                            <Form.Check inline label="Standard" type={'radio'} id={`radio-meal-partner-1`} checked={rsvp.meal2 === 'standard'} onChange={() => setRsvp({ ...rsvp, meal2: 'standard' })}/>
-                            <Form.Check inline label="Vegetarian" type={'radio'} id={`radio-meal-partner-2`} checked={rsvp.meal2 === 'vegetarian'} onChange={() => setRsvp({ ...rsvp, meal2: 'vegetarian' })}/>
-                            <Form.Check inline label="Lacto Vegetarian" type={'radio'} id={`radio-meal-partner-3`} checked={rsvp.meal2 === 'lacto-vegetarian'} onChange={() => setRsvp({ ...rsvp, meal2: 'lacto-vegetarian' })}/>
-                          </div>
-                        </> : ''
-                    }
-                    <div className={styles['question']}>
-                      { FormText[language].Tel }
-                    </div>
-                    <Form.Control type="text" value={ rsvp.tel } placeholder="Tel" onChange={(e) => setRsvp({ ...rsvp, tel: e.target.value })}/>
-                    <div className={styles['question']}>
-                      { FormText[language].MentionsQ }
-                    </div>
-                    <Form.Control type="text" value={ rsvp.mentions } placeholder={ FormText[language].MentionsPlaceholder } onChange={(e) => setRsvp({ ...rsvp, mentions: e.target.value })}/>
-                  </div> : ''
+                  </>: ''
               }
-              <div style={{ textAlign: 'center', margin: '20px 0 20px 0' }}>
-                <Button variant="primary" style={{ width: '200px' }} onClick={submitForm}>{ FormText[language].Submit }</Button>
-              </div>
+              {
+                rsvp.attending !== undefined
+                  ? <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                      <Button variant="primary" style={{ width: '200px' }} onClick={submitForm}>{ FormText[language].Submit }</Button>
+                    </div>
+                  : ''
+              }
             </Container>
           </> : <>
             <div className={styles["sub-heading"]}>
@@ -268,7 +275,7 @@ const Rsvp = () => {
               { Title[language].Footer() }
             </div>
             <div style={{ textAlign: 'center', margin: '20px 0 20px 0' }}>
-              <Button variant="primary" style={{ width: '200px' }} onClick={() => setStoredRsvp(null)}>{ FormText[language].ChangeInfo }</Button>
+              <Button variant="primary" style={{ width: '200px' }} onClick={retakeFormCallback}>{ FormText[language].ChangeInfo }</Button>
             </div>
           </>
       }

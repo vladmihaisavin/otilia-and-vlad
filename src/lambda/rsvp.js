@@ -12,6 +12,18 @@ const VALID_REFERERS = [
   'https://www.the-savins.com/report?token=oansbfbq24871qdn'
 ]
 
+const DB_OPTIONS = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  validateOptions: true,
+  bufferMaxEntries: 0,
+  loggerLevel: 'warn',
+  keepAlive: true,
+  poolSize: 10,
+  family: 4,
+  ha: true
+}
+
 function checkAuth (event) {
   return new Promise((resolve, reject) => {
     if (!event.headers.authorization) {
@@ -33,7 +45,7 @@ function connectToDatabase (uri) {
     return Promise.resolve(cachedDb)
 
   }
-  return MongoClient.connect(uri)
+  return MongoClient.connect(uri, DB_OPTIONS)
     .then(client => {
       cachedDb = client.db(dbName)
       return cachedDb
